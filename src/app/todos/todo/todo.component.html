@@ -1,0 +1,23 @@
+
+<div class="row" style="margin-top: 120px;">
+    <div class="col-6 ">
+        <ol class="list-group col-5" *ngFor="let todo of todos">
+           
+            <li  class="list-group-item" (click)="deleteTodo(todo)">{{todo.name}} :  {{todo.content}}
+        </ol>
+    </div>
+    
+    <div class=" card col-6">
+        <form >
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="Name" class="form-control" #Name placeholder="Enter name ..." required>
+      </div>
+      <div class="form-group ">
+          <label for="content">Content</label>
+          <input type="text" id="Content" class="form-control" #Content placeholder="Enter content ..." required>
+      </div>
+      <button type="button" (click)="addTodoToList(Name.value,Content.value); "  class="btn btn-primary">Add todo</button>
+      </form>
+  </div>
+</div>
